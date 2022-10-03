@@ -1,3 +1,8 @@
+import turtle
+
+WIDTH, HEIGHT = 700, 600
+
+
 def get_number_of_racers():
     racers = 0
     while True:
@@ -5,14 +10,21 @@ def get_number_of_racers():
         if racers.isdigit():
             racers = int(racers)
         else:
-            print('Input is not numeric... Try Again!')
+            print('Input is not numeric... Try Again !')
             continue
 
         if 2 <= racers <= 10:
             return racers
         else:
-            print('Number not in range 2-10. Try Again!')
+            print('Number not in range 2-10. Try Again !')
+
+
+def init_turtle():
+    screen = turtle.Screen()
+    screen.setup(WIDTH, HEIGHT)
+    screen.title('Turtle Racing !')
 
 
 racers = get_number_of_racers()
+init_turtle()
 print(racers)
